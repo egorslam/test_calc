@@ -1,0 +1,21 @@
+%form{action: "calc", method: "POST"}
+  .form-group
+    %label Interest Rate(%):
+    %input.form-control{name: "calc_result[interest_rate]", type: "text", required: true}
+  .form-group
+    %label Summ:
+    %input.form-control{name: "calc_result[summ]", type: "text",  required: true}
+  .form-group
+    %label Interest Rate:
+    .radio
+      %label
+        %input{name: "calc_result[method_of_loan_repayment]", type: "radio", value: 'standart', checked: 'checked'}>
+        Standart
+    .radio
+      %label
+        %input{name: "calc_result[method_of_loan_repayment]", type: "radio", value: 'annuity'}>
+        Annuity
+  .form-group
+    %label Term:
+    %input.form-control{name: "calc_result[term]", type: "text",  required: true}
+  %input.btn.btn-default{type: "submit", value: "Calc"}

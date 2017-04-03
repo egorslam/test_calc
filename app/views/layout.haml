@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %title Test app
+    %link{href: "https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css", rel: "stylesheet"}/
+  %script{src: "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"}
+  %body
+    %nav.navbar.navbar-default
+      .container-fluid
+        .navbar-header
+          %a.navbar-brand{href: "/"}
+            %i.fa.fa-paperclip
+            Test app
+    .col-xs-12.col-md-10.col-md-offset-1
+      = yield
+
+%script{src: "https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"}

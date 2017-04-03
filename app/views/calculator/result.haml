@@ -1,0 +1,26 @@
+%h3 Interest Rate
+= "#{@calc_result.interest_rate} %"
+%h3 Summ
+= @calc_result.start_summ
+%table.table
+  %thead
+    %tr
+      %th Month number
+      %th Repayment
+      %th Repayment Percent
+      %th General Contribution
+      %th Loan Balance
+  %tbody
+    - @calc_result.rows.each do | calc_result_row |
+      %tr
+        %td
+          = calc_result_row.month_number&.round(2)
+        %td 
+          = calc_result_row.repayment&.round(2)
+        %td
+          = calc_result_row.repayment_percent&.round(2)
+        %td
+          = calc_result_row.general_contribution&.round(2)
+        %td
+          = calc_result_row.loan_balance&.round(2)
+    = partial 'calculator/total_row', template_engine: :haml
